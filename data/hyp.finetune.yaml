@@ -1,0 +1,40 @@
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# Default training hyperparameters for YOLOv11n transformx3 (example). For complete list see https://docs.ultralytics.com/cfg/
+
+# Optimizer hyperparameters
+lr0: 0.01 # initial learning rate (SGD=5E-3, Adam=5E-4) (提高初始学习率，给模型一个更强的起始动力)
+lrf: 0.001 # final OneCycle LR (lr0 * lrf is the last LR) (降低最终学习率，便于精细调优)
+momentum: 0.937 # SGD momentum/Adam beta1
+weight_decay: 0.0005 # optimizer weight decay 5e-4
+warmup_epochs: 3.0 # warmup epochs (fractions ok) (保持暖身期)
+warmup_momentum: 0.8 # warmup initial momentum
+warmup_bias_lr: 0.1 # warmup initial bias lr
+
+# Loss hyperparameters
+box: 10.0 # box loss gain (提高box权重，您之前成功经验)
+cls: 0.5 # cls loss gain (分类权重，保持默认或略低)
+dfl: 1.5 # dfl loss gain (DFL权重，保持默认)
+obj: 0.7 # obj loss gain (objectness权重，您之前成功经验)
+label_smoothing: 0.0 # label smoothing (0.0 off, 0.1 on) (关闭标签平滑，避免过度平滑影响高精度)
+pose: 12.0 # pose loss gain (pose models only)
+kobj: 2.0 # keypoint obj loss gain (pose models only)
+
+# Augmentation hyperparameters
+hsv_h: 0.015 # image HSV-H augmentation (fraction) (略微降低HSV增强，避免过度扰动)
+hsv_s: 0.7 # image HSV-S augmentation (fraction) (保持饱和度增强)
+hsv_v: 0.4 # image HSV-V augmentation (fraction) (保持明度增强)
+degrees: 0.0 # image rotation (+/- deg) (关闭旋转，保持原图结构)
+translate: 0.1 # image translation (+/- fraction) (保持平移)
+scale: 0.5 # image scale (+/- gain) (保持缩放)
+shear: 0.0 # image shear (+/- deg) (关闭剪切)
+perspective: 0.0 # image perspective (+/- fraction), range 0-0.001 (关闭透视变换)
+flipud: 0.0 # image flip up-down (probability) (关闭上下翻转，通常不适用)
+fliplr: 0.5 # image flip left-right (probability) (保持左右翻转)
+mosaic: 1.0 # image mosaic (probability) (启用马赛克增强)
+mixup: 0.2 # image mixup (probability) (您之前成功经验，保持并可微调)
+copy_paste: 0.0 # segment copy-paste (probability) (关闭，仅用于分割)
+
+# Other hyperparameters
+pad: 0.0 # image padding (0 for center crop) (保持中心裁剪)
+rect: False # rectangular training
+val_split: 0.0 # fraction of data to split off for validation (数据集已分离，设为0)

@@ -1,0 +1,10 @@
+train_rgb: data/fire_data/rgb/train/images
+val_rgb: data/fire_data/rgb/val/images
+train_ir: data/fire_data/ir/train/images
+val_ir: data/fire_data/ir/val/images
+
+# number of classes
+nc: 1
+
+# class names
+names: ['fire']

@@ -1,0 +1,10 @@
+train_rgb: data/RGBT/rgb/train/images
+val_rgb: data/RGBT/rgb/val/images
+train_ir: data/RGBT/ir/train/images
+val_ir: data/RGBT/ir/val/images
+
+# number of classes
+nc: 3
+
+# class names
+names: ["smoke","fire","person"]
